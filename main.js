@@ -1,0 +1,1 @@
+const pexelKey = config.PEXEL_API;
