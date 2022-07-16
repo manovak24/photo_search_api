@@ -9,12 +9,16 @@ body, html {
     height: 100vh;
 }
 
+.light-gray {
+    color: #7A7F7F;
+}
+
 .hero-ctr {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     width: 100%;
-    padding: 100px 20px;
+    padding: 100px 20px 25px;
     background: lightblue;
 }
 
@@ -29,7 +33,7 @@ body, html {
 }
 
 .search-bar-ctr>input::placeholder, .search-bar-ctr>button {
-    color: lightslategray;
+    color: #7A7F7F;
 }
 
 button:hover {
@@ -48,4 +52,25 @@ button:hover {
     border: none;
     background-color: white;
     padding: 10px;
+}
+
+.trending-ctr {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 100px;
+}
+
+.trending-list {
+    display: flex;
+    list-style: none;
+}
+
+.trending-list li {
+    padding-left: 5px;
+    color: #FFFFFF;
+}
+
+.hero-img-credit {
+    color: #FFFFFF;
+    align-self: flex-end;
 }
