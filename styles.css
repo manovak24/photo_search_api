@@ -19,7 +19,8 @@ body, html {
     flex-direction: column;
     width: 100%;
     padding: 100px 20px 25px;
-    background: lightblue;
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size:cover;
 }
 
 .hero-ctr>h1 {
@@ -46,12 +47,16 @@ button:hover {
     width: 100%;
     padding: 10px;
     margin-right: -1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .search-bar-ctr>button {
     border: none;
     background-color: white;
     padding: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .trending-ctr {
