@@ -1,6 +1,6 @@
 const pexelKey = config.PEXEL_API;
 const searchTerm = document.querySelector('#search-term');
-const photoCtr = document.querySelector('.photo-ctr');
+const photosCtr = document.querySelector('.photo-ctr');
 const searchCtr = document.querySelector('.search-bar-ctr');
 const submitBtn = document.querySelector('.submit-btn');
 
@@ -12,12 +12,18 @@ const eventHandler = (e) => {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-        // Typical action to be performed when the document is ready:
-        const data = JSON.parse(xhttp.responseText);
-        console.log(data);
-        photoCtr.innerHTML = `
-                <img src="${data.photos[0].src.small}">
-        `;
+            const data = JSON.parse(xhttp.responseText);
+            console.log(data);
+            console.log(data.photos);
+
+            data.photos.forEach(function(photo) {
+                const photoDiv = document.createElement('div');
+                photoDiv.innerHTML = `
+                    <img src=${photo.src.small} alt=${photo.alt}>
+                `;
+                photosCtr.appendChild(photoDiv);
+            })
+            
         }
     };
     xhttp.open("GET", url, true);
