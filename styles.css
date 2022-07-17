@@ -46,7 +46,6 @@ button:hover {
     border: none;
     width: 100%;
     padding: 10px;
-    margin-right: -1px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
