@@ -19,7 +19,7 @@ const eventHandler = (e) => {
             data.photos.forEach(function(photo) {
                 const photoDiv = document.createElement('div');
                 photoDiv.innerHTML = `
-                    <img src=${photo.src.small} alt=${photo.alt}>
+                    <img src=${photo.src.medium} alt=${photo.alt}>
                 `;
                 photosCtr.appendChild(photoDiv);
             })
