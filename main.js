@@ -1,6 +1,6 @@
 const pexelKey = config.PEXEL_API;
 const searchTerm = document.querySelector('#search-term');
-const photosCtr = document.querySelector('.photo-ctr');
+const photosCtr = document.querySelector('.photos-ctr');
 const searchCtr = document.querySelector('.search-bar-ctr');
 const submitBtn = document.querySelector('.submit-btn');
 
@@ -18,6 +18,7 @@ const eventHandler = (e) => {
 
             data.photos.forEach(function(photo) {
                 const photoDiv = document.createElement('div');
+                photoDiv.classList.add('img-ctr');
                 photoDiv.innerHTML = `
                     <img src=${photo.src.medium} alt=${photo.alt}>
                 `;
