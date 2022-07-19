@@ -78,3 +78,12 @@ button:hover {
     color: #FFFFFF;
     align-self: flex-end;
 }
+
+.photos-ctr {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.img-ctr>img {
+    width: 75%;
+}
