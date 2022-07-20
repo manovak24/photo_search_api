@@ -20,7 +20,7 @@ const eventHandler = (e) => {
                 const photoDiv = document.createElement('div');
                 photoDiv.classList.add('img-ctr');
                 photoDiv.innerHTML = `
-                    <img src=${photo.src.medium} alt=${photo.alt}>
+                    <img lazy="load" src=${photo.src.medium} alt=${photo.alt}>
                 `;
                 photosCtr.appendChild(photoDiv);
             })
