@@ -7,6 +7,7 @@ const submitBtn = document.querySelector('.submit-btn');
 
 const eventHandler = (e) => {
     e.preventDefault();
+    photosCtr.innerHTML = ``;
     let term = searchTerm.value;
     const url = `https://api.pexels.com/v1/search?query=${term}`;
     var xhttp = new XMLHttpRequest();
