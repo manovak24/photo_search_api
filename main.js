@@ -1,7 +1,6 @@
 const pexelKey = config.PEXEL_API;
 const searchTerm = document.querySelector('#search-term');
-const photoColumnOne = document.querySelector('.photo-column-one');
-const photoColumnTwo = document.querySelector('.photo-column-two');
+const photosCtr = document.querySelector('.photos-ctr');
 const searchCtr = document.querySelector('.search-bar-ctr');
 const submitBtn = document.querySelector('.submit-btn');
 
@@ -17,33 +16,18 @@ const eventHandler = (e) => {
             console.log(data);
             console.log(data.photos);
 
-            for(i =0; i < data.photos.length; i++){
-                if(i < 7) {
-                    const photoDiv = document.createElement('div');
-                    photoDiv.classList.add('img-ctr');
-                    photoDiv.innerHTML = `
+            data.photos.forEach(function(photo) {
+                const photoDiv = document.createElement('div');
+                photoDiv.classList.add('img-ctr');
+                photoDiv.innerHTML = `
                     <img 
                         lazy="load"
-                        src=${data.photos[i].src.small}
-                        alt=${data.photos[i].alt}
+                        src=${photo.src.medium}
+                        alt=${photo.alt}
                     >
                 `;
-                photoColumnOne.appendChild(photoDiv);
-                } else {
-                    const photoDiv = document.createElement('div');
-                    photoDiv.classList.add('img-ctr');
-                    photoDiv.innerHTML = `
-                    <img 
-                        lazy="load"
-                        src=${data.photos[i].src.small}
-                        alt=${data.photos[i].alt}
-                    >
-                `;
-                photoColumnTwo.appendChild(photoDiv);
-                }
-            
-            }
-       
+                photosCtr.appendChild(photoDiv);
+            })
             
         }
     };
