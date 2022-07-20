@@ -80,8 +80,14 @@ button:hover {
 }
 
 .photos-ctr {
+    width: 100%;
+    height: 800px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.img-ctr {
+    width: 30%;
 }
 
 .img-ctr>img {
