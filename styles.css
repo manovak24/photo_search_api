@@ -81,19 +81,24 @@ button:hover {
 
 .photos-ctr {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 1200px;
-    overflow: hidden;
 }
 
 .img-ctr {
     padding: 5px;
-    width: 50%;
 }
 
 .img-ctr>img {
     width: 100%;
     max-width: 200px;
     max-height: 200px;
+}
+
+.hide {
+    display: none;
+}
+
+@media only screen and (min-width: 500px) {
+    .hide {
+        display: block;
+    }
 }
