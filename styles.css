@@ -79,6 +79,14 @@ button:hover {
     align-self: flex-end;
 }
 
+.content-container {
+    margin: 20px 10px;
+}
+
+.content-container>h2 {
+    font-size: 32px;
+}
+
 .photos-ctr {
     display: flex;
 }
@@ -97,7 +105,7 @@ button:hover {
     display: none;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 450px) {
     .hide {
         display: block;
     }
