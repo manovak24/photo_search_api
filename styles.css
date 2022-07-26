@@ -85,18 +85,6 @@ button:hover {
     align-self: flex-end;
 }
 
-.content-container {
-    margin: 20px 10px;
-}
-
-.content-container>h2 {
-    font-size: 32px;
-}
-
-.photos-ctr {
-    display: flex;
-}
-
 .img-ctr {
     padding: 5px;
 }
@@ -111,6 +99,21 @@ button:hover {
     display: none;
 }
 
+.content-ctr {
+    width: 100%;
+    margin: 20px 10px;
+}
+
+.content-ctr>h2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.photos-ctr {
+    display: flex;
+    justify-content: center;
+}
+
 @media only screen and (min-width: 450px) {
     .hide {
         display: block;
@@ -120,5 +123,11 @@ button:hover {
 @media only screen and (min-width: 600px) {
     .hero-content {
         width: 450px;
+    }
+
+    .photos-ctr {
+        margin-left: auto;
+        margin-right: auto;
+        width: 650px;
     }
 }
