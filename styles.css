@@ -9,6 +9,17 @@ body, html {
     height: 100vh;
 }
 
+input[type="radio"]:hover {
+    cursor: pointer;
+    opacity: .5;
+}
+
+label:hover {
+    cursor: pointer;
+    opacity: .5;
+}
+
+
 .light-gray {
     color: #7A7F7F;
 }
