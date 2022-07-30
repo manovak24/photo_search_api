@@ -5,7 +5,13 @@ const columnTwo = document.querySelector('.photos-column-two');
 const columnThree = document.querySelector('.photos-column-three');
 const searchCtr = document.querySelector('.search-bar-ctr');
 const submitBtn = document.querySelector('.submit-btn');
+const trendingItems = document.querySelectorAll('.trending-item');
 
+const getTrendingItem = () => {
+    trendingItems.forEach(item => {
+        console.log(item.value)
+    })
+}
 
 const eventHandler = (e) => {
     e.preventDefault();
@@ -75,4 +81,10 @@ const eventHandler = (e) => {
     xhttp.send();
 }
 
-searchCtr.addEventListener('submit', eventHandler);
+searchCtr.addEventListener('submit', (e) => {
+    eventHandler(e);
+});
+
+trendingItems.addEventListener('click', () => {
+    getTrendingItem();
+})
