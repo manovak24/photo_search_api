@@ -14,10 +14,6 @@ button:hover {
     color: green;
 }
 
-header {
-    height: 500px;
-}
-
 .light-gray {
     color: #7A7F7F;
 }
@@ -113,6 +109,7 @@ header {
 .content-ctr {
     width: 100%;
     margin: 20px 10px;
+    min-height: 250px;
 }
 
 .content-ctr>h2 {
