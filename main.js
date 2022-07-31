@@ -7,12 +7,6 @@ const searchCtr = document.querySelector('.search-bar-ctr');
 const submitBtn = document.querySelector('.submit-btn');
 const trendingItems = document.querySelectorAll('.trending-item');
 
-const getTrendingItem = () => {
-    trendingItems.forEach(item => {
-        console.log(item.value)
-    })
-}
-
 const eventHandler = (e) => {
     e.preventDefault();
     columnOne.innerHTML = ``;
@@ -34,7 +28,7 @@ const eventHandler = (e) => {
                     photoDiv.innerHTML = `
                         <img 
                             lazy="load"
-                            src=${data.photos[i].src.medium}
+                            src=${data.photos[i].src.large}
                             alt=${data.photos[i].alt}
                         >
                     `;
@@ -43,7 +37,7 @@ const eventHandler = (e) => {
                     photoDiv.innerHTML = `
                         <img 
                             lazy="load"
-                            src=${data.photos[i].src.medium}
+                            src=${data.photos[i].src.large}
                             alt=${data.photos[i].alt}
                         >
                     `;
@@ -52,7 +46,7 @@ const eventHandler = (e) => {
                     photoDiv.innerHTML = `
                         <img 
                             lazy="load"
-                            src=${data.photos[i].src.medium}
+                            src=${data.photos[i].src.large}
                             alt=${data.photos[i].alt}
                         >
                     `;
@@ -84,7 +78,3 @@ const eventHandler = (e) => {
 searchCtr.addEventListener('submit', (e) => {
     eventHandler(e);
 });
-
-trendingItems.addEventListener('click', () => {
-    getTrendingItem();
-})
