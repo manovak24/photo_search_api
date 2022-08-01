@@ -7,55 +7,55 @@ const searchCtr = document.querySelector('.search-bar-ctr');
 const submitBtn = document.querySelector('.submit-btn');
 const trendingItems = document.querySelectorAll('.trending-item');
 
-const onPageLoad = (e) => {
-    e.preventDefault();
-    let term = 'Beautiful';
-    const url = `https://api.pexels.com/v1/search?query=${term}&per_page=24`;
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            const data = JSON.parse(xhttp.responseText);
-            console.log(data);
-            console.log(data.photos);
+// const onPageLoad = (e) => {
+//     e.preventDefault();
+//     let term = 'Beautiful';
+//     const url = `https://api.pexels.com/v1/search?query=${term}&per_page=24`;
+//     var xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function() {
+//         if (this.readyState == 4 && this.status == 200) {
+//             const data = JSON.parse(xhttp.responseText);
+//             console.log(data);
+//             console.log(data.photos);
 
-            for(let i = 0; i < data.photos.length; i++) {
-                const photoDiv = document.createElement('div');
-                photoDiv.classList.add('img-ctr');
-                if(i <= 7) {
-                    photoDiv.innerHTML = `
-                        <img 
-                            lazy="load"
-                            src=${data.photos[i].src.large}
-                            alt=${data.photos[i].alt}
-                        >
-                    `;
-                    columnOne.appendChild(photoDiv);
-                } else if(i > 7 && i <= 15) {
-                    photoDiv.innerHTML = `
-                        <img 
-                            lazy="load"
-                            src=${data.photos[i].src.large}
-                            alt=${data.photos[i].alt}
-                        >
-                    `;
-                    columnTwo.appendChild(photoDiv);
-                } else {
-                    photoDiv.innerHTML = `
-                        <img 
-                            lazy="load"
-                            src=${data.photos[i].src.large}
-                            alt=${data.photos[i].alt}
-                        >
-                    `;
-                    columnThree.appendChild(photoDiv);
-                }
-            }
-        }
-    };
-    xhttp.open("GET", url, true);
-    xhttp.setRequestHeader('Authorization', pexelKey)
-    xhttp.send();
-}
+//             for(let i = 0; i < data.photos.length; i++) {
+//                 const photoDiv = document.createElement('div');
+//                 photoDiv.classList.add('img-ctr');
+//                 if(i <= 7) {
+//                     photoDiv.innerHTML = `
+//                         <img 
+//                             lazy="load"
+//                             src=${data.photos[i].src.large}
+//                             alt=${data.photos[i].alt}
+//                         >
+//                     `;
+//                     columnOne.appendChild(photoDiv);
+//                 } else if(i > 7 && i <= 15) {
+//                     photoDiv.innerHTML = `
+//                         <img 
+//                             lazy="load"
+//                             src=${data.photos[i].src.large}
+//                             alt=${data.photos[i].alt}
+//                         >
+//                     `;
+//                     columnTwo.appendChild(photoDiv);
+//                 } else {
+//                     photoDiv.innerHTML = `
+//                         <img 
+//                             lazy="load"
+//                             src=${data.photos[i].src.large}
+//                             alt=${data.photos[i].alt}
+//                         >
+//                     `;
+//                     columnThree.appendChild(photoDiv);
+//                 }
+//             }
+//         }
+//     };
+//     xhttp.open("GET", url, true);
+//     xhttp.setRequestHeader('Authorization', pexelKey)
+//     xhttp.send();
+// }
 
 const eventHandler = (e) => {
     e.preventDefault();
@@ -125,9 +125,9 @@ const eventHandler = (e) => {
     xhttp.send();
 }
 
-window.onload = function(e) {
-    onPageLoad(e);
-}
+// window.onload = function(e) {
+//     onPageLoad(e);
+// }
 
 searchCtr.addEventListener('submit', (e) => {
     eventHandler(e);
