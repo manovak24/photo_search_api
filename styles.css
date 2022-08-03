@@ -84,7 +84,6 @@ body, html {
 
 .trending-list>li {
     padding-left: 10px;
-    color: #FFFFFF;
 }
 
 .trending-list>li:hover {
@@ -92,6 +91,10 @@ body, html {
     color: #7A7F7F;
 }
 
+.trending-item {
+    text-decoration: none;
+    color: #FFFFFF;
+}
 
 .hero-img-credit {
     color: #FFFFFF;
