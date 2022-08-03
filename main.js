@@ -57,7 +57,7 @@ const onPageLoad = (e) => {
     xhttp.send();
 }
 
-const eventHandler = (e) => {
+const searchEvent = (e) => {
     e.preventDefault();
     columnOne.innerHTML = ``;
     columnTwo.innerHTML = ``;
@@ -130,5 +130,5 @@ window.onload = function(e) {
 }
 
 searchCtr.addEventListener('submit', (e) => {
-    eventHandler(e);
+    searchEvent(e);
 });
