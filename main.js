@@ -166,7 +166,8 @@ anime({
 });
 
 trendingItems.addEventListener('click', function(e) {
-    console.log(e.currentTarget)
-    searchEvent(e)
+    console.log(e.currentTarget);
+    searchEvent(e);
+    searchTerm.value = '';
 })
 
