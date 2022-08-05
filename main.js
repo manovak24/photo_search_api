@@ -23,7 +23,8 @@ const onPageLoad = (e) => {
                 photoDiv.classList.add('img-ctr');
                 if(i <= 7) {
                     photoDiv.innerHTML = `
-                        <img 
+                        <img
+                            class="pexel-img"
                             lazy="load"
                             src=${data.photos[i].src.large}
                             alt=${data.photos[i].alt}
@@ -32,7 +33,8 @@ const onPageLoad = (e) => {
                     columnOne.appendChild(photoDiv);
                 } else if(i > 7 && i <= 15) {
                     photoDiv.innerHTML = `
-                        <img 
+                        <img
+                            class="pexel-img" 
                             lazy="load"
                             src=${data.photos[i].src.large}
                             alt=${data.photos[i].alt}
@@ -41,7 +43,8 @@ const onPageLoad = (e) => {
                     columnTwo.appendChild(photoDiv);
                 } else {
                     photoDiv.innerHTML = `
-                        <img 
+                        <img
+                            class="pexel-img" 
                             lazy="load"
                             src=${data.photos[i].src.large}
                             alt=${data.photos[i].alt}
@@ -76,7 +79,8 @@ const searchEvent = (e) => {
                 photoDiv.classList.add('img-ctr');
                 if(i <= 7) {
                     photoDiv.innerHTML = `
-                        <img 
+                        <img
+                            class="pexel-img"
                             lazy="load"
                             src=${data.photos[i].src.large}
                             alt=${data.photos[i].alt}
@@ -85,7 +89,8 @@ const searchEvent = (e) => {
                     columnOne.appendChild(photoDiv);
                 } else if(i > 7 && i <= 15) {
                     photoDiv.innerHTML = `
-                        <img 
+                        <img
+                            class="pexel-img"
                             lazy="load"
                             src=${data.photos[i].src.large}
                             alt=${data.photos[i].alt}
@@ -94,7 +99,8 @@ const searchEvent = (e) => {
                     columnTwo.appendChild(photoDiv);
                 } else {
                     photoDiv.innerHTML = `
-                        <img 
+                        <img
+                            class="pexel-img"
                             lazy="load"
                             src=${data.photos[i].src.large}
                             alt=${data.photos[i].alt}
@@ -131,4 +137,12 @@ window.onload = function(e) {
 
 searchCtr.addEventListener('submit', (e) => {
     searchEvent(e);
+});
+
+anime({
+    targets: '.hero-title',
+    translateY: [
+        { value: -50, duration: 1000 },
+        { value: 0, duration: 800}
+    ]
 });
