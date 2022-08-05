@@ -36,6 +36,7 @@ body, html {
     font-weight: 500;
     font-size: 33px;
     line-height: 40px;
+    margin-top: -20px;
 }
 
 .search-bar-ctr {
@@ -110,6 +111,11 @@ body, html {
 
 .img-ctr>img {
     width: 100%;
+}
+
+.img-ctr>img:hover {
+    transition: transform .2ssssss;
+    transform: translateY(-4px) 
 }
 
 .hide-pic-row {
