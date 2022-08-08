@@ -10,12 +10,22 @@ body, html {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
+header {
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size:cover;
+}
+
 .white {
     color: #FFFFFF;
 }
 
 .light-gray {
     color: #7A7F7F;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
 }
 
 .hero-ctr {
@@ -25,8 +35,7 @@ body, html {
     width: 100%;
     min-height: 450px;
     padding: 120px 15px 80px;
-    background:linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-    background-size:cover;
+    
 }
 
 .hero-content {
@@ -110,7 +119,7 @@ body, html {
 }
 
 .img-ctr {
-    padding: 5px;
+    padding: 10px;
 }
 
 .img-ctr>img {
@@ -135,7 +144,7 @@ body, html {
 .content-ctr>h2 {
     font-size: 32px;
     font-weight: 500;
-    margin: 20px 15px;
+    margin: 25px 20px 20px;
 }
 
 .photos-ctr {
@@ -151,8 +160,18 @@ body, html {
 }
 
 @media only screen and (min-width: 900px) {
+    .content-ctr {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .content-ctr>h2 {
-        margin: 20px 25px;
+        margin: 25px 35px 20px;
+    }
+
+    .img-ctr {
+        padding: 15px;
     }
 
     .photos-ctr {
