@@ -1,3 +1,4 @@
+// variables for search bar
 const pexelKey = config.PEXEL_API;
 const searchTerm = document.querySelector('#search-term');
 const columnOne = document.querySelector('.photos-column-one');
