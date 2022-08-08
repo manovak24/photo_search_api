@@ -118,8 +118,8 @@ body, html {
 }
 
 .img-ctr>img:hover {
-    transition: transform .2ssssss;
-    transform: translateY(-4px) 
+    transition: transform .5s;
+    transform: translateY(-5px);
 }
 
 .hide-pic-row {
