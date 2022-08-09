@@ -14,66 +14,6 @@ const trendingThree = document.getElementById('trending-three');
 const trendingFour = document.getElementById('trending-four');
 const trendingItems = document.querySelectorAll('.trending-item');
 
-
-// The below api is for when page loads and to bring up images
-const onPageLoad = (e) => {
-    e.preventDefault();
-    let term = 'Beautiful';
-    const url = `https://api.pexels.com/v1/search?query=${term}&per_page=24`;
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            const data = JSON.parse(xhttp.responseText);
-            console.log(data);
-            console.log(data.photos);
-
-            for(let i = 0; i < data.photos.length; i++) {
-                const photoDiv = document.createElement('div');
-                photoDiv.classList.add('img-ctr');
-                if(i <= 7) {
-                    photoDiv.innerHTML = `
-                        <img
-                            class="pexel-img"
-                            lazy="load"
-                            src=${data.photos[i].src.large}
-                            alt=${data.photos[i].alt}
-                        >
-                    `;
-                    columnOne.appendChild(photoDiv);
-                } else if(i > 7 && i <= 15) {
-                    photoDiv.innerHTML = `
-                        <img
-                            class="pexel-img" 
-                            lazy="load"
-                            src=${data.photos[i].src.large}
-                            alt=${data.photos[i].alt}
-                        >
-                    `;
-                    columnTwo.appendChild(photoDiv);
-                } else {
-                    photoDiv.innerHTML = `
-                        <img
-                            class="pexel-img" 
-                            lazy="load"
-                            src=${data.photos[i].src.large}
-                            alt=${data.photos[i].alt}
-                        >
-                    `;
-                    columnThree.appendChild(photoDiv);
-                }
-            }
-        }
-    };
-    xhttp.open("GET", url, true);
-    xhttp.setRequestHeader('Authorization', pexelKey)
-    xhttp.send();
-}
-
-window.onload = function(e) {
-    onPageLoad(e);
-}
-
-
 // Term variable for the search API
 let term;
 
@@ -148,6 +88,13 @@ const searchEvent = (e) => {
     xhttp.setRequestHeader('Authorization', pexelKey)
     xhttp.send();
 }
+
+// first api search request for page load
+window.onload = function(e) {
+    term = 'beautiful';
+    searchEvent(e);
+}
+
 
 // Event Listeners for search bar and each trending tag
 searchCtr.addEventListener('submit', (e) => {
