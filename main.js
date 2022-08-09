@@ -14,8 +14,8 @@ const trendingThree = document.getElementById('trending-three');
 const trendingFour = document.getElementById('trending-four');
 const trendingItems = document.querySelectorAll('.trending-item');
 
-// Term variable for the search API
-let term;
+// Search Term variable for the search API
+let termToSearch;
 
 // The below api request is for using the search bar
 const searchEvent = (e) => {
@@ -23,8 +23,8 @@ const searchEvent = (e) => {
     columnOne.innerHTML = ``;
     columnTwo.innerHTML = ``;
     columnThree.innerHTML = ``;
-    console.log(term)
-    const url = `https://api.pexels.com/v1/search?query=${term}&per_page=24`;
+    console.log(termToSearch)
+    const url = `https://api.pexels.com/v1/search?query=${termToSearch}&per_page=24`;
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -91,7 +91,7 @@ const searchEvent = (e) => {
 
 // first api search request for page load
 window.onload = function(e) {
-    term = 'beautiful';
+    termToSearch = 'beautiful';
     searchEvent(e);
 }
 
@@ -99,7 +99,7 @@ window.onload = function(e) {
 // Event Listeners for search bar and each trending tag
 searchCtr.addEventListener('submit', (e) => {
     // set term variable for api to the search term value
-    term = searchTerm.value;
+    termToSearch = searchTerm.value;
     // call search event function
     searchEvent(e);
     // clear the search bar for blank result after search api
@@ -107,25 +107,25 @@ searchCtr.addEventListener('submit', (e) => {
 });
 
 trendingOne.addEventListener('click', (e) => {
-    term = trendingOne.innerText;
+    termToSearch = trendingOne.innerText;
     searchEvent(e);
     searchTerm.value = '';
 })
 
 trendingTwo.addEventListener('click', (e) => {
-    term = trendingTwo.innerText;
+    termToSearch = trendingTwo.innerText;
     searchEvent(e);
     searchTerm.value = '';
 })
 
 trendingThree.addEventListener('click', (e) => {
-    term = trendingThree.innerText;
+    termToSearch = trendingThree.innerText;
     searchEvent(e);
     searchTerm.value = '';
 })
 
 trendingFour.addEventListener('click', (e) => {
-    term = trendingFour.innerText;
+    termToSearch = trendingFour.innerText;
     searchEvent(e);
     searchTerm.value = '';
 })
