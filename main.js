@@ -129,15 +129,3 @@ trendingFour.addEventListener('click', (e) => {
     searchEvent(e);
     searchTerm.value = '';
 })
-
-// Testing out anime.js and added to hero-content
-anime({
-    targets: '.hero-content',
-    translateY: [
-        { value: -20, duration: 1000 },
-        { value: 0, duration: 800}
-    ],
-    direction: 'alternate',
-    loop: 'false',
-    easing: 'linear'
-});
