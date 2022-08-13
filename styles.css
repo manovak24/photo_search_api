@@ -43,8 +43,7 @@ a {
 }
 
 .nav-links-ctr {
-    display: flex;
-    align-items: center;
+    display: none;
 }
 
 .nav-link {
@@ -65,10 +64,9 @@ a {
     cursor: pointer;
 }
 
-.hamburger-icon>i {
-    color: white;
-    font-size: 24px;
-}
+/* .mobile-nav-links-ctr {
+    display: none;
+} */
 
 .hero-ctr {
     display: flex;
@@ -201,6 +199,13 @@ a {
 }
 
 @media only screen and (min-width: 900px) {
+    .nav-links-ctr {
+        display: flex;
+        align-items: center;
+    }
+    .mobile-nav-links-ctr {
+        display: none;
+    }
     .content-ctr {
         width: 90%;
         margin-left: auto;
