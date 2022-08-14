@@ -6,6 +6,7 @@ const columnTwo = document.querySelector('.photos-column-two');
 const columnThree = document.querySelector('.photos-column-three');
 const searchCtr = document.querySelector('.search-bar-ctr');
 const submitBtn = document.querySelector('.submit-btn');
+const navBar = document.querySelector('#nav-bar');
 
 // variables for trending search items
 const trendingOne = document.getElementById('trending-one');
@@ -129,3 +130,15 @@ trendingFour.addEventListener('click', (e) => {
     searchEvent(e);
     searchTerm.value = '';
 })
+
+window.onscroll = function() {myFunction()};
+const sticky = navBar.offsetTop;
+
+function myFunction() {
+    if(window.pageYOffset >= sticky) {
+        navBar.classList.add('sticky-nav-bar');
+        navBar.classList.remove('nav-bar');
+    } else if(window.pageYOffset === sticky) {
+        navBar.classList.remove('sticky-nav-bar');
+    }
+}
