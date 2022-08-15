@@ -46,11 +46,16 @@ a {
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: black;
+    background-color: white;
 }
 
 .nav-logo>a {
     color: white;
+    font-size: 24px;
+}
+
+.sticky-nav-logo>a {
+    color: black;
     font-size: 24px;
 }
 
@@ -61,6 +66,12 @@ a {
 .nav-link {
     padding-right: 15px;
     color: white;
+    font-size: 16px;
+}
+
+.sticky-nav-link {
+    padding-right: 15px;
+    color: black;
     font-size: 16px;
 }
 
