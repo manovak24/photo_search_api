@@ -134,10 +134,10 @@ trendingFour.addEventListener('click', (e) => {
 const navBar = document.querySelector('#nav-bar');
 const navLinks = document.querySelectorAll('.nav-link');
 
-window.onscroll = function() {myFunction(), mySecondFunction()};
+window.onscroll = function() {addStickyNav(), removeStickyNav()};
 const sticky = navBar.offsetTop;
 
-function myFunction() {
+function addStickyNav() {
     if(window.pageYOffset >= sticky) {
         navBar.classList.add('sticky-nav-bar');
         navBar.classList.remove('nav-bar');
@@ -149,7 +149,7 @@ function myFunction() {
     }
 }
 
-function mySecondFunction() {
+function removeStickyNav() {
     if(window.pageYOffset === sticky) {
         navBar.classList.add('nav-bar')
         navBar.classList.remove('sticky-nav-bar');
