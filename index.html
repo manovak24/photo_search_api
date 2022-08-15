@@ -13,18 +13,22 @@
 </head>
 <body>
     <header>
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+              <a href="#">About</a>
+              <a href="#">Services</a>
+              <a href="#">Clients</a>
+              <a href="#">Contact</a>
+            </div>
+        </div>
+
         <nav class="nav-bar" id="nav-bar">
             <div class="nav-logo">
                 <a href="#">Photo Search</a>
             </div>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
             <div class="nav-links-ctr" id="nav-links-ctr">
-                <a href="#" class="nav-link">Explore</a>
-                <a href="#" class="nav-link">License</a>
-                <a href="#" class="nav-link">Upload</a>
-                <a href="#" class="nav-link">···</a>
-                <button>Join</button>
-            </div>
-            <div class="mobile-nav-links-ctr">
                 <a href="#" class="nav-link">Explore</a>
                 <a href="#" class="nav-link">License</a>
                 <a href="#" class="nav-link">Upload</a>
