@@ -133,6 +133,7 @@ trendingFour.addEventListener('click', (e) => {
 // sticky navbar
 const navBar = document.querySelector('#nav-bar');
 const navLinks = document.querySelectorAll('.nav-link');
+const navLogo = document.querySelector('.nav-logo');
 
 window.onscroll = function() {addStickyNav(), removeStickyNav()};
 const sticky = navBar.offsetTop;
@@ -141,6 +142,9 @@ function addStickyNav() {
     if(window.pageYOffset >= sticky) {
         navBar.classList.add('sticky-nav-bar');
         navBar.classList.remove('nav-bar');
+
+        navLogo.classList.add('sticky-nav-logo');
+        navLogo.classList.remove('nav-logo');
 
         navLinks.forEach(navLink => {
             navLink.classList.add('sticky-nav-link');
@@ -154,9 +158,20 @@ function removeStickyNav() {
         navBar.classList.add('nav-bar')
         navBar.classList.remove('sticky-nav-bar');
 
+        navLogo.classList.add('nav-logo');
+        navLogo.classList.remove('sticky-nav-logo');
+
         navLinks.forEach(navLink => {
             navLink.classList.add('nav-link');
             navLink.classList.remove('sticky-nav-link')
         })
     }
 }
+
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
+  
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }
