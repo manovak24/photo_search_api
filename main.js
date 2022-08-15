@@ -6,7 +6,6 @@ const columnTwo = document.querySelector('.photos-column-two');
 const columnThree = document.querySelector('.photos-column-three');
 const searchCtr = document.querySelector('.search-bar-ctr');
 const submitBtn = document.querySelector('.submit-btn');
-const navBar = document.querySelector('#nav-bar');
 
 // variables for trending search items
 const trendingOne = document.getElementById('trending-one');
@@ -131,14 +130,33 @@ trendingFour.addEventListener('click', (e) => {
     searchTerm.value = '';
 })
 
-window.onscroll = function() {myFunction()};
+// sticky navbar
+const navBar = document.querySelector('#nav-bar');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.onscroll = function() {myFunction(), mySecondFunction()};
 const sticky = navBar.offsetTop;
 
 function myFunction() {
     if(window.pageYOffset >= sticky) {
         navBar.classList.add('sticky-nav-bar');
         navBar.classList.remove('nav-bar');
-    } else if(window.pageYOffset === sticky) {
+
+        navLinks.forEach(navLink => {
+            navLink.classList.add('sticky-nav-link');
+            navLink.classList.remove('nav-link');
+        })
+    }
+}
+
+function mySecondFunction() {
+    if(window.pageYOffset === sticky) {
+        navBar.classList.add('nav-bar')
         navBar.classList.remove('sticky-nav-bar');
+
+        navLinks.forEach(navLink => {
+            navLink.classList.add('nav-link');
+            navLink.classList.remove('sticky-nav-link')
+        })
     }
 }
