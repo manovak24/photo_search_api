@@ -134,6 +134,7 @@ trendingFour.addEventListener('click', (e) => {
 const navBar = document.querySelector('#nav-bar');
 const navLinks = document.querySelectorAll('.nav-link');
 const navLogo = document.querySelector('.nav-logo');
+const menuIcon = document.querySelector('.menu-icon');
 
 window.onscroll = function() {addStickyNav(), removeStickyNav()};
 const sticky = navBar.offsetTop;
@@ -150,6 +151,8 @@ function addStickyNav() {
             navLink.classList.add('sticky-nav-link');
             navLink.classList.remove('nav-link');
         })
+
+        menuIcon.classList.remove('menu-icon');
     }
 }
 
@@ -165,6 +168,8 @@ function removeStickyNav() {
             navLink.classList.add('nav-link');
             navLink.classList.remove('sticky-nav-link')
         })
+
+        menuIcon.classList.add('menu-icon');
     }
 }
 
