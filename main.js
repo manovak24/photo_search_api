@@ -26,16 +26,16 @@ const searchEvent = (e) => {
     console.log(termToSearch)
     const url = `https://api.pexels.com/v1/search?query=${termToSearch}&per_page=24`;
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             const data = JSON.parse(xhttp.responseText);
             console.log(data);
             console.log(data.photos);
 
-            for(let i = 0; i < data.photos.length; i++) {
+            for (let i = 0; i < data.photos.length; i++) {
                 const photoDiv = document.createElement('div');
                 photoDiv.classList.add('img-ctr');
-                if(i <= 7) {
+                if (i <= 7) {
                     photoDiv.innerHTML = `
                         <img
                             class="pexel-img"
@@ -45,7 +45,7 @@ const searchEvent = (e) => {
                         >
                     `;
                     columnOne.appendChild(photoDiv);
-                } else if(i > 7 && i <= 15) {
+                } else if (i > 7 && i <= 15) {
                     photoDiv.innerHTML = `
                         <img
                             class="pexel-img"
@@ -66,7 +66,7 @@ const searchEvent = (e) => {
                     `;
                     columnThree.appendChild(photoDiv);
                 }
-            } 
+            }
 
             // Below works but changing because I want to make a three column layout
             // data.photos.forEach(function(photo) {
@@ -90,10 +90,10 @@ const searchEvent = (e) => {
 }
 
 // first api search request for page load
-window.onload = function(e) {
-    termToSearch = 'beautiful';
-    searchEvent(e);
-}
+// window.onload = function(e) {
+//     termToSearch = 'beautiful';
+//     searchEvent(e);
+// }
 
 
 // Event Listeners for search bar and each trending tag
@@ -135,12 +135,15 @@ const navBar = document.querySelector('#nav-bar');
 const navLinks = document.querySelectorAll('.nav-link');
 const navLogo = document.querySelector('.nav-logo');
 const menuIcon = document.querySelector('.menu-icon');
+const mobileNav = document.querySelector('.mobile-nav');
 
-window.onscroll = function() {addStickyNav(), removeStickyNav()};
+window.onscroll = function () {
+    addStickyNav(), removeStickyNav()
+};
 const sticky = navBar.offsetTop;
 
 function addStickyNav() {
-    if(window.pageYOffset >= sticky) {
+    if (window.pageYOffset >= sticky) {
         navBar.classList.add('sticky-nav-bar');
         navBar.classList.remove('nav-bar');
 
@@ -152,12 +155,13 @@ function addStickyNav() {
             navLink.classList.remove('nav-link');
         })
 
+        menuIcon.classList.add('sticky-menu-icon');
         menuIcon.classList.remove('menu-icon');
     }
 }
 
 function removeStickyNav() {
-    if(window.pageYOffset === sticky) {
+    if (window.pageYOffset === sticky) {
         navBar.classList.add('nav-bar')
         navBar.classList.remove('sticky-nav-bar');
 
@@ -170,13 +174,21 @@ function removeStickyNav() {
         })
 
         menuIcon.classList.add('menu-icon');
+        menuIcon.classList.remove('sticky-menu-icon');
     }
 }
 
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
-  }
-  
-  function closeNav() {
+    mobileNav.innerHTML = `
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#10006;</a>
+    `;
+}
+
+function closeNav() {
     document.getElementById("myNav").style.width = "0%";
-  }
+    mobileNav.innerHTML = `
+        <button class="join-btn">Join</button>
+        <div class="menu-icon" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</div>
+    `;
+}
