@@ -90,10 +90,10 @@ const searchEvent = (e) => {
 }
 
 // first api search request for page load
-// window.onload = function(e) {
-//     termToSearch = 'beautiful';
-//     searchEvent(e);
-// }
+window.onload = function(e) {
+    termToSearch = 'beautiful';
+    searchEvent(e);
+}
 
 
 // Event Listeners for search bar and each trending tag
@@ -180,15 +180,15 @@ function removeStickyNav() {
 
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
-    mobileNav.innerHTML = `
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#10006;</a>
-    `;
+    // mobileNav.innerHTML = `
+    //     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#10006;</a>
+    // `;
 }
 
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
-    mobileNav.innerHTML = `
-        <button class="join-btn">Join</button>
-        <div class="menu-icon" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</div>
-    `;
+    // mobileNav.innerHTML = `
+    //     <button class="join-btn">Join</button>
+    //     <div class="menu-icon" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</div>
+    // `;
 }
