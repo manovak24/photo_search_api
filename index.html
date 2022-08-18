@@ -16,7 +16,7 @@
         
         <nav class="nav-bar" id="nav-bar">
             <div class="nav-logo">
-                <a href="#">Photo Search</a>
+                <a href="#">PS</a>
             </div>
             <div class="nav-links-ctr" id="nav-links-ctr">
                 <a href="#" class="nav-link">Explore</a>
@@ -32,7 +32,22 @@
         </nav>
 
         <div id="myNav" class="overlay">
-            
+            <div class="overlay-top-nav">
+                <div class="nav-logo">
+                    <a href="#">PS</a>
+                </div>
+                <div class="nav-search-ctr">
+                    <form class="search-bar-ctr">
+                        <input type="text" name="search-term" id="search-term" placeholder="Search for free photos">
+                        <button type="submit" class="submit-btn" onclick="closeNav()">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+                <div>
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#10006;</a>
+                </div>
+            </div>    
             <div class="overlay-content">
               <a href="#">About</a>
               <a href="#">Services</a>
