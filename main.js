@@ -135,6 +135,7 @@ const navBar = document.querySelector('#nav-bar');
 const navLinks = document.querySelectorAll('.nav-link');
 const menuIcon = document.querySelector('.menu-icon');
 const mobileNav = document.querySelector('.mobile-nav');
+const joinBtn = document.querySelector('#join-btn');
 
 window.onscroll = function () {
     addStickyNav(), removeStickyNav()
@@ -143,6 +144,9 @@ const sticky = navBar.offsetTop;
 
 function addStickyNav() {
     if (window.pageYOffset >= sticky) {
+        joinBtn.classList.add('sticky-join-btn');
+        joinBtn.classList.remove('join-btn');
+
         navBar.classList.add('sticky-nav-bar');
         navBar.classList.remove('nav-bar');
 
@@ -153,11 +157,16 @@ function addStickyNav() {
 
         menuIcon.classList.add('sticky-menu-icon');
         menuIcon.classList.remove('menu-icon');
+
+        
     }
 }
 
 function removeStickyNav() {
     if (window.pageYOffset === sticky) {
+        joinBtn.classList.add('join-btn');
+        joinBtn.classList.remove('sticky-join-btn');
+
         navBar.classList.add('nav-bar')
         navBar.classList.remove('sticky-nav-bar');
 
@@ -168,6 +177,8 @@ function removeStickyNav() {
 
         menuIcon.classList.add('menu-icon');
         menuIcon.classList.remove('sticky-menu-icon');
+
+        
     }
 }
 
