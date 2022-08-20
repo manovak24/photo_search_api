@@ -135,7 +135,7 @@ const navBar = document.querySelector('#nav-bar');
 const navLinks = document.querySelectorAll('.nav-link');
 const menuIcon = document.querySelector('.menu-icon');
 const mobileNav = document.querySelector('.mobile-nav');
-const joinBtn = document.querySelector('#join-btn');
+const joinBtn = document.querySelector('#mobile-join-btn');
 
 window.onscroll = function () {
     addStickyNav(), removeStickyNav()
