@@ -90,10 +90,10 @@ const searchEvent = (e) => {
 }
 
 // first api search request for page load
-window.onload = function(e) {
-    termToSearch = 'beautiful';
-    searchEvent(e);
-}
+// window.onload = function(e) {
+//     termToSearch = 'beautiful';
+//     searchEvent(e);
+// }
 
 
 // Event Listeners for search bar and each trending tag
