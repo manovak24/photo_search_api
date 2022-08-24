@@ -58,7 +58,7 @@ a {
 
 .nav-logo {
     background-color: rgb(43, 102, 179);
-    width: 42px;
+    width: 48px;
     height: 42px;
     display: flex;
     justify-content: center;
@@ -151,7 +151,8 @@ a {
 .search-bar-ctr>input::placeholder,
 .search-bar-ctr>button {
     color: #7A7F7F;
-    font-size: 18px;
+    padding-left: 10px;
+    font-size: 20px;
 }
 
 .search-bar-ctr>input {
@@ -255,7 +256,6 @@ a {
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0);
     overflow-x: hidden;
-    transition: 0.2s;
 }
 
 .overlay-content {
@@ -270,7 +270,8 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 25px;   
+    padding: 20px 25px;
+    border-bottom: .5px solid gray; 
 }
 
 /* .overlay a {
@@ -297,6 +298,43 @@ a {
     padding-right: 10px;
     padding-left: 10px;
 }
+
+.overlay-search-bar-ctr {
+    display: flex;
+    width: 100%;
+}
+
+.overlay-search-bar-ctr>input::placeholder,
+.overlay-search-bar-ctr>button {
+    color: #7A7F7F;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.overlay-search-bar-ctr>input {
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 42px;
+}
+
+.overlay-search-bar-ctr>button {
+    border: none;
+    background-color: white;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 42px;
+}
+
+.overlay-search-bar-ctr>button:hover {
+    cursor: pointer;
+    color: green;
+}
+
+/* End overlay section styles */
 
 @media screen and (max-height: 450px) {
     .overlay a {
