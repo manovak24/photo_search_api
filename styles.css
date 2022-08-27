@@ -58,7 +58,7 @@ a {
 
 .nav-logo {
     background-color: rgb(43, 102, 179);
-    width: 48px;
+    min-width: 48px;
     height: 42px;
     display: flex;
     justify-content: center;
@@ -93,6 +93,7 @@ a {
 }
 
 .join-btn {
+    background-color: white;
     font-size: 16px;
     margin-right: 15px;
     padding: 10px 20px;
@@ -270,7 +271,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 25px;
+    padding: 19px 25px;
     border-bottom: .5px solid gray; 
 }
 
@@ -294,7 +295,9 @@ a {
 }
 
 .overlay-nav-search-ctr {
-    width: 70%;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .overlay-search-bar-ctr {
@@ -347,12 +350,30 @@ a {
 /* end overlay mobile menu */
 
 @media only screen and (min-width: 675px) {
+    .nav-logo {
+        min-width: 50px;
+        height: 50px;
+    }
+    
     .mobile-nav {
         align-items: start;
     }
+
+    .overlay-top-nav {
+        padding: 15px 25px;
+    }
+
+    .overlay-search-bar-ctr>input {
+        height: 50px;
+    }
+
+    .overlay-search-bar-ctr>button {
+        height: 50px;
+    }
     
     .join-btn {
-        padding: 15px;
+        height: 50px;
+        padding: 15px 20px;
     }
 
     .hero-content {
