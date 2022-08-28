@@ -1,10 +1,12 @@
 // variables for search bar
 const pexelKey = config.PEXEL_API;
 const searchTerm = document.querySelector('#search-term');
+const overlaySearchTerm = document.querySelector('#overlay-search-term');
 const columnOne = document.querySelector('.photos-column-one');
 const columnTwo = document.querySelector('.photos-column-two');
 const columnThree = document.querySelector('.photos-column-three');
 const searchCtr = document.querySelector('.search-bar-ctr');
+const overlaySearchCtr = document.querySelector('.overlay-search-ctr');
 const submitBtn = document.querySelector('.submit-btn');
 
 // variables for trending search items
@@ -106,7 +108,13 @@ searchCtr.addEventListener('submit', (e) => {
     searchTerm.value = '';
 });
 
-trendingOne.addEventListener('click', (e) => {
+overlaySearchCtr.addEventListener('submit', (e) => {
+    termToSearch = overlaySearchTerm.value;
+    searchEvent(e);
+    searchTerm.value = '';
+})
+
+trendingOne.addEventListener('submit', (e) => {
     termToSearch = trendingOne.innerText;
     searchEvent(e);
     searchTerm.value = '';
