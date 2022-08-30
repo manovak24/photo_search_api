@@ -114,7 +114,7 @@ overlaySearchCtr.addEventListener('submit', (e) => {
     searchTerm.value = '';
 })
 
-trendingOne.addEventListener('submit', (e) => {
+trendingOne.addEventListener('click', (e) => {
     termToSearch = trendingOne.innerText;
     searchEvent(e);
     searchTerm.value = '';
