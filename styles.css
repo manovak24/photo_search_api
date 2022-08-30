@@ -129,7 +129,6 @@ a {
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 450px;
     padding: 120px 15px 80px;
 }
 
@@ -209,9 +208,9 @@ a {
 .hero-img-credit {
     color: #FFFFFF;
     font-size: 14px;
-    position: absolute;
-    right: 20px;
-    top: 500px;
+    text-align: right;
+    padding-bottom: 25px;
+    padding-right: 25px;
 }
 
 .img-ctr {
