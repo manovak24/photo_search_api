@@ -264,8 +264,20 @@ a {
 }
 
 .overlay-content {
-    color: white;
     display: flex;
+    flex-direction: column;
+    padding: 30px 15px;
+    border-bottom: .5px solid gray; 
+}
+
+.overlay-content>a {
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.overlay-content>a:not(:last-child) {
+    margin-bottom: 15px;
 }
 
 .overlay-top-nav {
