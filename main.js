@@ -92,10 +92,10 @@ const searchEvent = (e) => {
 }
 
 // first api search request for page load
-window.onload = function(e) {
-    termToSearch = 'beautiful';
-    searchEvent(e);
-}
+// window.onload = function(e) {
+//     termToSearch = 'beautiful';
+//     searchEvent(e);
+// }
 
 
 // Event Listeners for search bar and each trending tag
@@ -143,6 +143,7 @@ const navBar = document.querySelector('#nav-bar');
 const navLinks = document.querySelectorAll('.nav-link');
 const menuIcon = document.querySelector('.menu-icon');
 const mobileNav = document.querySelector('.mobile-nav');
+const mobileSearchBar = document.querySelector('.mobile-search-bar-ctr');
 const joinBtn = document.querySelector('#mobile-join-btn');
 
 window.onscroll = function () {
@@ -156,7 +157,7 @@ function addStickyNav() {
         joinBtn.classList.remove('join-btn');
 
         navBar.classList.add('sticky-nav-bar');
-        navBar.classList.remove('nav-bar');
+        // navBar.classList.remove('nav-bar');
 
         navLinks.forEach(navLink => {
             navLink.classList.add('sticky-nav-link');
@@ -166,7 +167,8 @@ function addStickyNav() {
         menuIcon.classList.add('sticky-menu-icon');
         menuIcon.classList.remove('menu-icon');
 
-        
+        mobileSearchBar.classList.add('sticky-mobile-search-bar-ctr');
+        mobileSearchBar.classList.remove('mobile-search-bar-ctr');
     }
 }
 
@@ -175,7 +177,7 @@ function removeStickyNav() {
         joinBtn.classList.add('join-btn');
         joinBtn.classList.remove('sticky-join-btn');
 
-        navBar.classList.add('nav-bar')
+        // navBar.classList.add('nav-bar')
         navBar.classList.remove('sticky-nav-bar');
 
         navLinks.forEach(navLink => {
@@ -186,7 +188,8 @@ function removeStickyNav() {
         menuIcon.classList.add('menu-icon');
         menuIcon.classList.remove('sticky-menu-icon');
 
-        
+        mobileSearchBar.classList.add('mobile-search-bar-ctr');
+        mobileSearchBar.classList.remove('sticky-mobile-search-bar-ctr');
     }
 }
 
