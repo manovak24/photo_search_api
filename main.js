@@ -154,41 +154,27 @@ const sticky = navBar.offsetTop;
 function addStickyNav() {
     if (window.pageYOffset >= sticky) {
         joinBtn.classList.add('sticky-join-btn');
-        joinBtn.classList.remove('join-btn');
-
         navBar.classList.add('sticky-nav-bar');
-        // navBar.classList.remove('nav-bar');
-
         navLinks.forEach(navLink => {
             navLink.classList.add('sticky-nav-link');
             navLink.classList.remove('nav-link');
         })
-
         menuIcon.classList.add('sticky-menu-icon');
-        menuIcon.classList.remove('menu-icon');
-
+        mobileNav.classList.add('sticky-mobile-nav');
         mobileSearchBar.classList.add('sticky-mobile-search-bar-ctr');
-        mobileSearchBar.classList.remove('mobile-search-bar-ctr');
     }
 }
 
 function removeStickyNav() {
     if (window.pageYOffset === sticky) {
-        joinBtn.classList.add('join-btn');
         joinBtn.classList.remove('sticky-join-btn');
-
-        // navBar.classList.add('nav-bar')
         navBar.classList.remove('sticky-nav-bar');
-
         navLinks.forEach(navLink => {
             navLink.classList.add('nav-link');
             navLink.classList.remove('sticky-nav-link')
         })
-
-        menuIcon.classList.add('menu-icon');
         menuIcon.classList.remove('sticky-menu-icon');
-
-        mobileSearchBar.classList.add('mobile-search-bar-ctr');
+        mobileNav.classList.remove('sticky-mobile-nav');
         mobileSearchBar.classList.remove('sticky-mobile-search-bar-ctr');
     }
 }
