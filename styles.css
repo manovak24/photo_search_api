@@ -96,6 +96,11 @@ a {
     cursor: pointer;
 }
 
+.sticky-join-btn {
+    background-color: rgb(43, 102, 179);
+    color: white;
+}
+
 .sticky-mobile-join-btn {
     display: none;
 }
@@ -178,6 +183,10 @@ a {
 .search-bar-ctr>button:hover {
     cursor: pointer;
     color: green;
+}
+
+.topnav-search-bar-ctr {
+    display: none;
 }
 
 .mobile-search-bar-ctr {
@@ -404,6 +413,12 @@ a {
         padding: 15px 20px;
     }
 
+    .sticky-mobile-join-btn {
+        display: block;
+        background-color: rgb(43, 102, 179);
+        color: white;
+    }
+
     .overlay-join-btn {
         display: block;
         background-color: rgb(43, 102, 179);
@@ -424,6 +439,20 @@ a {
 
     .mobile-nav {
         display: none;
+    }
+
+    .sticky-topnav-search-bar-ctr {
+        display: flex;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    .sticky-topnav-search-bar-ctr>input {
+        background-color: #ebebeb;
+    }
+    
+    .sticky-topnav-search-bar-ctr>button {
+        background-color: #ebebeb;
     }
 
     .content-ctr {
