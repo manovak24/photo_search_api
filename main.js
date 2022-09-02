@@ -141,10 +141,12 @@ trendingFour.addEventListener('click', (e) => {
 // sticky navbar
 const navBar = document.querySelector('#nav-bar');
 const navLinks = document.querySelectorAll('.nav-link');
+const joinBtn = document.querySelector('#join-btn');
 const menuIcon = document.querySelector('.menu-icon');
+const topNavSearchBar = document.querySelector('.topnav-search-bar-ctr');
 const mobileNav = document.querySelector('.mobile-nav');
 const mobileSearchBar = document.querySelector('.mobile-search-bar-ctr');
-const joinBtn = document.querySelector('#mobile-join-btn');
+const mobileJoinBtn = document.querySelector('#mobile-join-btn');
 
 window.onscroll = function () {
     addStickyNav(), removeStickyNav()
@@ -153,7 +155,7 @@ const sticky = navBar.offsetTop;
 
 function addStickyNav() {
     if (window.pageYOffset >= sticky) {
-        joinBtn.classList.add('sticky-mobile-join-btn');
+        mobileJoinBtn.classList.add('sticky-mobile-join-btn');
         navBar.classList.add('sticky-nav-bar');
         navLinks.forEach(navLink => {
             navLink.classList.add('sticky-nav-link');
@@ -162,12 +164,14 @@ function addStickyNav() {
         menuIcon.classList.add('sticky-menu-icon');
         mobileNav.classList.add('sticky-mobile-nav');
         mobileSearchBar.classList.add('sticky-mobile-search-bar-ctr');
+        joinBtn.classList.add('sticky-join-btn');
+        topNavSearchBar.classList.add('sticky-topnav-search-bar-ctr');
     }
 }
 
 function removeStickyNav() {
     if (window.pageYOffset === sticky) {
-        joinBtn.classList.remove('sticky-mobile-join-btn');
+        mobileJoinBtn.classList.remove('sticky-mobile-join-btn');
         navBar.classList.remove('sticky-nav-bar');
         navLinks.forEach(navLink => {
             navLink.classList.add('nav-link');
@@ -176,6 +180,8 @@ function removeStickyNav() {
         menuIcon.classList.remove('sticky-menu-icon');
         mobileNav.classList.remove('sticky-mobile-nav');
         mobileSearchBar.classList.remove('sticky-mobile-search-bar-ctr');
+        joinBtn.classList.remove('sticky-join-btn');
+        topNavSearchBar.classList.remove('sticky-topnav-search-bar-ctr');
     }
 }
 
