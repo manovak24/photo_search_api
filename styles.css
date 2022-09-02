@@ -43,7 +43,7 @@ a {
     top: 0px;
     left: 0px;
     background-color: white;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .nav-logo {
@@ -96,7 +96,7 @@ a {
     cursor: pointer;
 }
 
-.sticky-join-btn {
+.sticky-mobile-join-btn {
     display: none;
 }
 

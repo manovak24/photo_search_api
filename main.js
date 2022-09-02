@@ -153,7 +153,7 @@ const sticky = navBar.offsetTop;
 
 function addStickyNav() {
     if (window.pageYOffset >= sticky) {
-        joinBtn.classList.add('sticky-join-btn');
+        joinBtn.classList.add('sticky-mobile-join-btn');
         navBar.classList.add('sticky-nav-bar');
         navLinks.forEach(navLink => {
             navLink.classList.add('sticky-nav-link');
@@ -167,7 +167,7 @@ function addStickyNav() {
 
 function removeStickyNav() {
     if (window.pageYOffset === sticky) {
-        joinBtn.classList.remove('sticky-join-btn');
+        joinBtn.classList.remove('sticky-mobile-join-btn');
         navBar.classList.remove('sticky-nav-bar');
         navLinks.forEach(navLink => {
             navLink.classList.add('nav-link');
