@@ -5,7 +5,7 @@ const overlaySearchTerm = document.querySelector('#overlay-search-term');
 const columnOne = document.querySelector('.photos-column-one');
 const columnTwo = document.querySelector('.photos-column-two');
 const columnThree = document.querySelector('.photos-column-three');
-const searchCtr = document.querySelector('.search-bar-ctr');
+const searchCtr = document.querySelectorAll('.search-bar-ctr');
 const overlaySearchCtr = document.querySelector('.overlay-search-ctr');
 const submitBtn = document.querySelector('.submit-btn');
 
@@ -97,16 +97,26 @@ const searchEvent = (e) => {
 //     searchEvent(e);
 // }
 
+// Trying to figure out a way to use same search for all search bar containers.
+
+searchCtr.forEach(search => {
+    search.addEventListener('submit', (e) => {
+        termToSearch = search.value;
+        searchEvent(e);
+        searchTerm.value = '';
+    })
+})
+
 
 // Event Listeners for search bar and each trending tag
-searchCtr.addEventListener('submit', (e) => {
-    // set term variable for api to the search term value
-    termToSearch = searchTerm.value;
-    // call search event function
-    searchEvent(e);
-    // clear the search bar for blank result after search api
-    searchTerm.value = '';
-});
+// searchCtr.addEventListener('submit', (e) => {
+//     // set term variable for api to the search term value
+//     termToSearch = searchTerm.value;
+//     // call search event function
+//     searchEvent(e);
+//     // clear the search bar for blank result after search api
+//     searchTerm.value = '';
+// });
 
 overlaySearchCtr.addEventListener('submit', (e) => {
     termToSearch = overlaySearchTerm.value;
