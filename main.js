@@ -122,14 +122,20 @@ const searchEvent = (e) => {
 
 
 // Event Listeners for search bar and each trending tag
+// searchCtr.addEventListener('submit', (e) => {
+//     // set term variable for api to the search term value
+//     termToSearch = searchTerm.value;
+//     // call search event function
+//     searchEvent(e);
+//     // clear the search bar for blank result after search api
+//     searchTerm.value = '';
+// });
+
 searchCtr.addEventListener('submit', (e) => {
-    // set term variable for api to the search term value
     termToSearch = searchTerm.value;
-    // call search event function
     searchEvent(e);
-    // clear the search bar for blank result after search api
     searchTerm.value = '';
-});
+})
 
 mobileSearchBarCtr.addEventListener('submit', (e) => {
     termToSearch = mobileSearchTerm.value;
@@ -146,7 +152,7 @@ topNavSearchBarCtr.addEventListener('submit', (e) => {
 overlaySearchCtr.addEventListener('submit', (e) => {
     termToSearch = overlaySearchTerm.value;
     searchEvent(e);
-    searchTerm.value = '';
+    overlaySearchTerm.value = '';
 })
 
 trendingOne.addEventListener('click', (e) => {
