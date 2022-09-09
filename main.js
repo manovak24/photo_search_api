@@ -105,10 +105,10 @@ const searchEvent = (e) => {
 }
 
 // first api search request for page load
-// window.onload = function(e) {
-//     termToSearch = 'beautiful';
-//     searchEvent(e);
-// }
+window.onload = function(e) {
+    termToSearch = 'beautiful';
+    searchEvent(e);
+}
 
 // Trying to figure out a way to use same search for all search bar containers.
 // searchCtr.forEach(search => {
