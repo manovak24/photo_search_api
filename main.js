@@ -1,25 +1,31 @@
 // variables for search bar
 const pexelKey = config.PEXEL_API;
+
+// DOM variables searchterms for api
 const heroSearchTerm = document.querySelector('#hero-search-term');
 const overlaySearchTerm = document.querySelector('#overlay-search-term');
 const mobileSearchTerm = document.querySelector('#mobile-search-term');
 const topnavSearchTerm = document.querySelector('#topnav-search-term');
-const columnOne = document.querySelector('.photos-column-one');
-const columnTwo = document.querySelector('.photos-column-two');
-const columnThree = document.querySelector('.photos-column-three');
+
+// DOM variables for search containers
 const heroSearchBarCtr = document.querySelector('.hero-search-bar-ctr');
 const overlaySearchCtr = document.querySelector('.overlay-search-ctr');
 const mobileSearchCtr = document.querySelector('.mobile-search-ctr');
 const submitBtn = document.querySelector('.submit-btn');
 
-// variables for trending search items
+// DOM variables for trending search items
 const trendingOne = document.getElementById('trending-one');
 const trendingTwo = document.getElementById('trending-two');
 const trendingThree = document.getElementById('trending-three');
 const trendingFour = document.getElementById('trending-four');
 const trendingItems = document.querySelectorAll('.trending-item');
 
-// sticky navbar
+// DOM variables for photo columns
+const columnOne = document.querySelector('.photos-column-one');
+const columnTwo = document.querySelector('.photos-column-two');
+const columnThree = document.querySelector('.photos-column-three');
+
+// DOM variables sticky navbar
 const navBar = document.querySelector('#nav-bar');
 const navLinks = document.querySelectorAll('.nav-link');
 const joinBtn = document.querySelector('#join-btn');
@@ -29,10 +35,20 @@ const mobileNav = document.querySelector('.mobile-nav');
 const mobileSearchBarCtr = document.querySelector('.mobile-search-bar-ctr');
 const mobileJoinBtn = document.querySelector('#mobile-join-btn');
 
+
+// overlay nav functions
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+
 // Search Term variable for the search API
 let termToSearch;
 
-// The below api request is for using the search bar
+// Pexels API search request
 const searchEvent = (e) => {
     e.preventDefault();
     columnOne.innerHTML = ``;
@@ -110,41 +126,7 @@ window.onload = function(e) {
     searchEvent(e);
 }
 
-// Trying to figure out a way to use same search for all search bar containers.
-// searchCtr.forEach(search => {
-//     search.addEventListener('submit', (e) => {
-//         termToSearch = searchTerm.value;
-//         searchEvent(e);
-//         searchTerm.value = '';
-//     })
-// })
-
-// Event Listeners for search bar and each trending tag
-// searchCtr.addEventListener('submit', (e) => {
-//     // set term variable for api to the search term value
-//     termToSearch = searchTerm.value;
-//     // call search event function
-//     searchEvent(e);
-//     // clear the search bar for blank result after search api
-//     searchTerm.value = '';
-// });
-
-// overlay nav functions
-function openNav() {
-    document.getElementById("myNav").style.width = "100%";
-    // mobileNav.innerHTML = `
-    //     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#10006;</a>
-    // `;
-}
-
-function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
-    // mobileNav.innerHTML = `
-    //     <button class="join-btn">Join</button>
-    //     <div class="menu-icon" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</div>
-    // `;
-}
-
+// search container api eventhandlers
 heroSearchBarCtr.addEventListener('submit', (e) => {
     termToSearch = heroSearchTerm.value;
     searchEvent(e);
