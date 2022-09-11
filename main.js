@@ -1,13 +1,13 @@
 // variables for search bar
 const pexelKey = config.PEXEL_API;
-const searchTerm = document.querySelector('#search-term');
+const heroSearchTerm = document.querySelector('#hero-search-term');
 const overlaySearchTerm = document.querySelector('#overlay-search-term');
 const mobileSearchTerm = document.querySelector('#mobile-search-term');
 const topnavSearchTerm = document.querySelector('#topnav-search-term');
 const columnOne = document.querySelector('.photos-column-one');
 const columnTwo = document.querySelector('.photos-column-two');
 const columnThree = document.querySelector('.photos-column-three');
-const searchCtr = document.querySelector('.search-bar-ctr');
+const heroSearchBarCtr = document.querySelector('.hero-search-bar-ctr');
 const overlaySearchCtr = document.querySelector('.overlay-search-ctr');
 const mobileSearchCtr = document.querySelector('.mobile-search-ctr');
 const submitBtn = document.querySelector('.submit-btn');
@@ -131,8 +131,8 @@ window.onload = function(e) {
 //     searchTerm.value = '';
 // });
 
-searchCtr.addEventListener('submit', (e) => {
-    termToSearch = searchTerm.value;
+heroSearchBarCtr.addEventListener('submit', (e) => {
+    termToSearch = heroSearchTerm.value;
     searchEvent(e);
     searchTerm.value = '';
 })
