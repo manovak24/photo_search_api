@@ -119,8 +119,6 @@ window.onload = function(e) {
 //     })
 // })
 
-
-
 // Event Listeners for search bar and each trending tag
 // searchCtr.addEventListener('submit', (e) => {
 //     // set term variable for api to the search term value
@@ -131,28 +129,47 @@ window.onload = function(e) {
 //     searchTerm.value = '';
 // });
 
+// overlay nav functions
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+    // mobileNav.innerHTML = `
+    //     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#10006;</a>
+    // `;
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+    // mobileNav.innerHTML = `
+    //     <button class="join-btn">Join</button>
+    //     <div class="menu-icon" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</div>
+    // `;
+}
+
 heroSearchBarCtr.addEventListener('submit', (e) => {
     termToSearch = heroSearchTerm.value;
     searchEvent(e);
-    searchTerm.value = '';
+    heroSearchTerm.value = '';
 })
 
 mobileSearchBarCtr.addEventListener('submit', (e) => {
     termToSearch = mobileSearchTerm.value;
     searchEvent(e);
     mobileSearchTerm.value = '';
+    closeNav();
 })
 
 topNavSearchBarCtr.addEventListener('submit', (e) => {
     termToSearch = topnavSearchTerm.value;
     searchEvent(e);
     topnavSearchTerm.value = '';
+    closeNav();
 })
 
 overlaySearchCtr.addEventListener('submit', (e) => {
     termToSearch = overlaySearchTerm.value;
     searchEvent(e);
     overlaySearchTerm.value = '';
+    closeNav();
 })
 
 trendingOne.addEventListener('click', (e) => {
@@ -216,19 +233,4 @@ function removeStickyNav() {
         joinBtn.classList.remove('sticky-join-btn');
         topNavSearchBarCtr.classList.remove('sticky-topnav-search-bar-ctr');
     }
-}
-
-function openNav() {
-    document.getElementById("myNav").style.width = "100%";
-    // mobileNav.innerHTML = `
-    //     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#10006;</a>
-    // `;
-}
-
-function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
-    // mobileNav.innerHTML = `
-    //     <button class="join-btn">Join</button>
-    //     <div class="menu-icon" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</div>
-    // `;
 }
