@@ -374,6 +374,21 @@ a {
 
 /* End overlay section styles */
 
+.footer-ctr {
+    display: flex;
+    justify-content: center;
+    padding: 16px 0px;
+}
+
+.footer-ctr>a {
+    color: black;
+}
+
+.footer-ctr>a:hover {
+    cursor: pointer;
+    opacity: .5;
+}
+
 @media screen and (max-height: 450px) {
     .overlay a {
         font-size: 20px
