@@ -382,6 +382,7 @@ a {
 
 .footer-ctr>a {
     color: black;
+    border-bottom: 1px solid black;
 }
 
 .footer-ctr>a:hover {
