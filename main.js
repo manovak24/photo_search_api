@@ -121,10 +121,10 @@ const searchEvent = (e) => {
 }
 
 // first api search request for page load
-window.onload = function(e) {
-    termToSearch = 'beautiful';
-    searchEvent(e);
-}
+// window.onload = function(e) {
+//     termToSearch = 'beautiful';
+//     searchEvent(e);
+// }
 
 // search container api eventhandlers
 heroSearchBarCtr.addEventListener('submit', (e) => {
